@@ -6,7 +6,7 @@ const skillSchema = new Schema<ISkill>({
     percentage: { type: Number, required: true, min: 0, max: 100 },
     description: { type: String, required: false },
     yearsOfExperience: { type: Number, required: true },
-    category: { type: String, required: false, default: "Web Development" },
+    category: { type: String, required: false },
     createdAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now }
 });
