@@ -3,6 +3,7 @@ import AppError from "../../errors/AppError";
 import { TLoginUser } from "./auth.interface";
 import { createToken } from "../../utils/verifyJWT";
 import config from "../../config";
+import { User } from "../user/user.model";
 
 const loginUser = async (payload: TLoginUser) => {
     // checking if the user is exist
@@ -10,14 +11,6 @@ const loginUser = async (payload: TLoginUser) => {
 
     if (!user) {
         throw new AppError(StatusCodes.NOT_FOUND, 'This user is not found!');
-    }
-
-    // checking if the user is blocked
-
-    const userStatus = user?.status;
-
-    if (userStatus === 'BLOCKED') {
-        throw new AppError(StatusCodes.FORBIDDEN, 'This user is blocked!');
     }
 
     //checking if the password is correct
@@ -29,12 +22,7 @@ const loginUser = async (payload: TLoginUser) => {
 
     const jwtPayload = {
         _id: user._id,
-        name: user.name,
-        email: user.email,
-        mobileNumber: user.mobileNumber,
-        profilePhoto: user.profilePhoto,
-        role: user.role,
-        status: user.status,
+        email: user.email
     };
 
     const accessToken = createToken(
