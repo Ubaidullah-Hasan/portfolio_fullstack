@@ -3,6 +3,7 @@ import { Document} from 'mongoose';
 export interface ISkill extends Document {
     name: string;
     percentage: number;
+    image: string;
     description: string; 
     yearsOfExperience: number;
     category?: string;
@@ -10,4 +11,3 @@ export interface ISkill extends Document {
     updatedAt: Date;
 }
 
-// level: "Beginner" | "Intermediate" | "Advanced" | "Expert" | "Master";
