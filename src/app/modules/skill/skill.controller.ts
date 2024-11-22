@@ -18,7 +18,7 @@ const createSkill = catchAsync(async (req, res) => {
 });
 
 const getAllSkills = catchAsync(async (req, res) => {
-    const result = await skillServices.createSkillIntoDB(req.body);
+    const result = await skillServices.getAllSkills();
 
     sendResponse(res, {
         statusCode: StatusCodes.OK,

@@ -3,7 +3,6 @@ import router from "./routes";
 import cors from "cors";
 import config from "./config";
 import notFoundRoute from "./middlewares/notFoundRoute";
-import { StatusCodes } from "http-status-codes";
 import globalErrorHandler from "./middlewares/globalErrorHandler";
 
 const app: Express = express();

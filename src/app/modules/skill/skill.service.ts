@@ -6,7 +6,7 @@ const createSkillIntoDB = async (payload: ISkill) => {
     return result;
 }
 
-const getAllSkills = async (payload: ISkill) => {
+const getAllSkills = async () => {
     const result = await Skill.find();
     return result;
 }
