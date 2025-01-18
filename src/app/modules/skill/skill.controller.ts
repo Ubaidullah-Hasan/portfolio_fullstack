@@ -28,7 +28,19 @@ const getAllSkills = catchAsync(async (req, res) => {
     });
 });
 
+const skillsAnalysis = catchAsync(async (req, res) => {
+    const result = await skillServices.skillsAnalysis();
+
+    sendResponse(res, {
+        statusCode: StatusCodes.OK,
+        success: true,
+        message: 'Get all skills analysis!',
+        data: result,
+    });
+});
+
 export const skillControllers = {
     createSkill,
     getAllSkills,
+    skillsAnalysis,
 };

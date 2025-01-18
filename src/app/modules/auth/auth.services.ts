@@ -23,6 +23,8 @@ const loginUser = async (payload: TLoginUser) => {
     const jwtPayload = {
         _id: user._id,
         email: user.email
+        // name:
+        // photo: todo: add here photo and also schema
     };
 
     const accessToken = createToken(

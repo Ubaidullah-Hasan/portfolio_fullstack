@@ -11,7 +11,13 @@ const getAllSkills = async () => {
     return result;
 }
 
+const skillsAnalysis = async () => {
+    const result = await Skill.find().select("name percentage");
+    return result;
+}
+
 export const skillServices = {
     createSkillIntoDB,
     getAllSkills,
+    skillsAnalysis,
 }

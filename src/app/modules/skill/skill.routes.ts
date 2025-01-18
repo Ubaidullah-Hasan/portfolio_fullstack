@@ -14,4 +14,8 @@ router.get("/",
     skillControllers.getAllSkills
 )
 
+router.get("/skills-analytics",
+    skillControllers.skillsAnalysis
+)
+
 export const skillRoutes = router;
